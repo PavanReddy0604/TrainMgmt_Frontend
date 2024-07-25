@@ -1,0 +1,28 @@
+<div>
+    <h2>{{ trainId ? 'Edit Train' : 'Add Train' }}</h2>
+    <form [formGroup]="trainForm" (ngSubmit)="onSubmit()">
+      <label>
+        Train Number:
+        <input formControlName="trainNumber" type="number">
+      </label>
+      <label>
+        Train Name:
+        <input formControlName="trainName" type="text">
+      </label>
+      <label>
+        Arrival Time:
+        <input formControlName="trainArrivalTime" type="datetime-local">
+      </label>
+      <label>
+        Departure Time:
+        <input formControlName="trainDepartureTime" type="datetime-local">
+      </label>
+      <label>
+        Status:
+        <input formControlName="status" type="text">
+      </label>
+      <button type="submit">{{ trainId ? 'Update' : 'Save' }}</button>
+      <button type="button" (click)="cancel()">Cancel</button>
+    </form>
+  </div>
+  
